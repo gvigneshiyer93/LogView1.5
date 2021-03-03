@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div>
+    <h3 id="contentheading" align="center">Login Log</h3> 
+<listview>
+    <filters>
+        <filteruserid></filteruserid><br>
+        <filterdate></filterdate><br>
+    </filters>
+        <resetbtn></resetbtn>
+        <applybtn></applybtn>
+        
+        <div  class="table table-striped" style="width:1050px;height:300px;line-height:3em;overflow:scroll;padding:5px;background-color: lightcyan;color:#714D03;scrollbar-base-color:lightgrey ;margin-left: 12%">
+                <table id="dataTable" border="1">
+
+                    <tr ng-repeat="log in logtablejson">
+                        <td ng-repeat="l in log">{{l.entity}}</td>
+                    </tr>
+                </table>
+            </div>
+</listview>    
+</div>    
+
+
+
+
+<!--        <div>
+
+            <h3 id="heading" style="background-image:url(../style/image/headerbg.jpg);" align="center">Login Log</h3>
+
+            <table align="center" cellspacing="20px">
+                <tr>
+                    <td>
+                        <input type="checkbox" ng-model="useridactivator" id="useridactivator" 
+                               onclick="var input = document.getElementById('userId'); 
+                   if(this.checked)
+                        { input.disabled = false; input.focus();}
+                        else{input.disabled= true;
+                                       }">
+                        Filter by User ID
+                    </td>
+                    <td>
+                        <input type="text" disabled="disabled" id="userId" placeholder="Enter the User Id" ng-model="userId"></td>
+                    <td>{{uidmsg}}
+                    </td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td><input type="checkbox" id="dateactivator" ng-model="dateactivator"
+                               onclick="var input = document.getElementById('fromDate');
+                                       var input2 = document.getElementById('toDate');
+                                       if (this.checked) {
+                                           input.disabled = false;
+                                           input2.disabled = false;
+                                           input.focus();
+
+                                       } else {
+                                           input.disabled = true;
+                                           input2.disabled = true;
+                                       }">Filter by Date</td>
+
+                    <td>
+                        <input type="date" ng-model="frsDate" disabled="disabled" id="fromDate"></td>
+                    <td>
+                        <input type="date" disabled="disabled" ng-model="toDate" id="toDate">
+                    </td><td>{{udatemsg}}</td></tr>
+                 <tr><td>&nbsp;</td></tr>
+                <tr><td>
+                        <input type="checkbox" id="timeactivator" 
+                               onclick="var input = document.getElementById('fromTime');
+                                       var input2 = document.getElementById('toTime');
+                                       if (this.checked) {
+                                           input.disabled = false;
+                                           input2.disabled = false;
+                                           input.focus();
+                                       } else {
+                                           input.disabled = true;
+                                           input2.disabled = true;
+                                       }">Filter by Time</td>
+                    <td>
+                        <input type="time" disabled="disabled" id="fromTime"></td>
+                    <td><input disabled="disabled" type="time" id="toTime" >
+                    </td></tr>
+                <tr><td>&nbsp;</td></tr>
+
+            </table>
+            <table align="center">
+                <tr><td></td>
+                    <td><button type="button" class="btn btn-warning" onclick="
+                            document.getElementById('useridactivator').checked = false;
+                            document.getElementById('userId').value = null;
+                            document.getElementById('userId').disabled = true;
+
+                            document.getElementById('dateactivator').checked = false;
+                            document.getElementById('fromDate').value = null;
+                            document.getElementById('toDate').value = null;
+                            document.getElementById('fromDate').disabled = true;
+                            document.getElementById('toDate').disabled = true;
+
+                            document.getElementById('timeactivator').checked = false;
+                            document.getElementById('fromTime').value = null;
+                            document.getElementById('toTime').value = null;
+                            document.getElementById('fromTime').disabled = true;
+                            document.getElementById('toTime').disabled = true;
+                            document.getElementById('dataTable').value=null;
+                                ">Reset All Filters</button></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><button class="btn btn-primary" ng-click="filters();">Apply Filters and Search</button>
+                    </td></tr>
+                <tr><td>&nbsp;&nbsp;</td></tr>
+            </table>
+            <div  class="table table-striped" style="width:1050px;height:300px;line-height:3em;overflow:scroll;padding:5px;background-color: lightcyan;color:#714D03;scrollbar-base-color:lightgrey ;margin-left: 12%">
+                <table id="dataTable" border="1">
+
+                    <tr ng-repeat="log in logtablejson">
+                        <td ng-repeat="l in log">{{l.entity}}</td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+            
+
+        </div>-->
